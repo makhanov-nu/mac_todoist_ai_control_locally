@@ -1,14 +1,37 @@
-# Gemma4:12B access to Mac
-In this file you can find a way how to control your Mac apps through local AI model.
+# Local AI Agent for Mac — Powered by Gemma4:12B
 
-Surve the model locally. This model took 10Gb RAM.
+Control your Mac apps with a fully local AI model. No cloud. No API keys leaving your machine.
+
+## How it works
+
+A locally running Gemma4:12B processes your voice input and interacts with your apps via tool calls.
+This example creates a Todoist task from a voice reminder.
+
+**RAM usage:** ~10GB
+
+## Setup
+
+Pull the model:
+```bash
 ollama run gemma4:12b
+```
 
-Requirements:
+Install dependencies:
+```bash
 pip install langchain langchain-openai todoist-api-python
+```
 
-Run it:
+Add your Todoist API token to `main.py`:
+```python
+TODOIST_TOKEN = "your_token_here"
+```
+
+## Run
+
+```bash
 python main.py
+```
 
-Result:
-Look at your todoist app for a new task.
+## Result
+
+Check your Todoist — a new task will appear based on your audio input.
